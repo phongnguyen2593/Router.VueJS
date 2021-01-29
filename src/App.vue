@@ -1,28 +1,24 @@
 <template>
     <div id="app">
-        <router-view  @authenticated="setAuthenticated"/> 
-        
+        <Exercise1 />
+        <Exercise2 />
     </div>
 </template>
 
 <script>
+import Exercise1 from '@/views/Unit07/Exercise1.vue'
+import Exercise2 from '@/views/Unit07/Exercise2.vue'
 export default {
     name: 'App',
+    components: {
+        Exercise1,
+        Exercise2
+    },
     data() {
         return {
-            authenticated: '',
+           //
         }
     },
-    mounted() {
-        if (this.authenticated = true) {
-            this.$router.replace({ name: "Login" });
-        }
-    },
-    methods: {
-        setAuthenticated(status) {
-            this.authenticated = status;
-        }
-    }
 }
 </script>
 
